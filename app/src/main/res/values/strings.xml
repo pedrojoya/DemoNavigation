@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NavigationTest</string>
+    <string name="secondary_title">Secondary</string>
+    <string name="main_title">Main</string>
+    <string name="main_btnShowSecondary">Show secondary</string>
+    <string name="secondary_lblMessage">Message</string>
+    <string name="main_mnuShowSecondary">Show secondary</string>
+</resources>
