@@ -3,6 +3,8 @@ package es.iessaladillo.pedrojoya.navigationtest;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -19,17 +21,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Get navController from activity.
         navController = Navigation.findNavController(this, R.id.navHostFragment);
-        setupActionBar();
+        setupToolbar();
     }
 
-    private void setupActionBar() {
+    private void setupToolbar() {
+        Toolbar toolbar = ActivityCompat.requireViewById(this, R.id.toolbar);
+        setSupportActionBar(toolbar);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp();
+        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
     }
 
 }
