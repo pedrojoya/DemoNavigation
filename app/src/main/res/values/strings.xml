@@ -5,4 +5,5 @@
     <string name="main_btnShowSecondary">Show secondary</string>
     <string name="secondary_lblMessage">Message</string>
     <string name="main_mnuShowSecondary">Show secondary</string>
+    <string name="txtMessage">Message</string>
 </resources>

@@ -13,7 +13,6 @@ import androidx.navigation.ui.NavigationUI;
 public class MainActivity extends AppCompatActivity {
 
     private NavController navController;
-    private AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = ActivityCompat.requireViewById(this, R.id.toolbar);
         setSupportActionBar(toolbar);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+            navController.getGraph()).build();
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
     }
 
