@@ -16,12 +16,7 @@ import es.iessaladillo.pedrojoya.navigationtest.R;
 
 public class SecondaryFragment extends Fragment {
 
-    private SecondaryFragmentViewModel mViewModel;
     private String message;
-
-    public static SecondaryFragment newInstance() {
-        return new SecondaryFragment();
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

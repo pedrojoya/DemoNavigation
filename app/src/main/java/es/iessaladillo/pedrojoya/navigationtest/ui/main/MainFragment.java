@@ -21,13 +21,8 @@ import es.iessaladillo.pedrojoya.navigationtest.R;
 
 public class MainFragment extends Fragment {
 
-    private MainFragmentViewModel mViewModel;
     private NavController navController;
     private TextView txtMessage;
-
-    public static MainFragment newInstance() {
-        return new MainFragment();
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
