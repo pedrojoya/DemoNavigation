@@ -12,11 +12,9 @@
         android:id="@+id/txtMessage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:hint="@string/txtMessage"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +22,7 @@
 
     <Button
         android:id="@+id/btnShowSecondary"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/main_btnShowSecondary"
         app:layout_constraintEnd_toEndOf="parent"
