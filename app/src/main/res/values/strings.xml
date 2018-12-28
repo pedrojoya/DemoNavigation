@@ -1,9 +1,21 @@
 <resources>
     <string name="app_name">NavigationTest</string>
-    <string name="secondary_title">Secondary</string>
+
     <string name="main_title">Main</string>
     <string name="main_btnShowSecondary">Show secondary</string>
-    <string name="secondary_lblMessage">Message</string>
     <string name="main_mnuShowSecondary">Show secondary</string>
-    <string name="txtMessage">Message</string>
+    <string name="main_txtMessage">Message</string>
+    <string name="main_navigationView_header_title">Android Studio</string>
+    <string name="main_navigationView_header_subtitle">android.studio@android.com</string>
+    <string name="main_navigationView_header_desc">Navigation header</string>
+
+    <string name="secondary_title">Secondary</string>
+    <string name="secondary_lblMessage">Message</string>
+
+
+    <string name="gallery_title">Gallery</string>
+
+    <string name="slideshow_title">Slideshow</string>
+
+    <string name="settings_title">Settings</string>
 </resources>
