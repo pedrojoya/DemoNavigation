@@ -8,25 +8,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 import es.iessaladillo.pedrojoya.navigationtest.R;
 
 public class MainFragment extends Fragment {
 
-    private MainFragmentViewModel mViewModel;
     private NavController navController;
-
-    public static MainFragment newInstance() {
-        return new MainFragment();
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,9 +44,13 @@ public class MainFragment extends Fragment {
     }
 
     private void setupViews(View view) {
+        EditText txtMessage = ViewCompat.requireViewById(view, R.id.txtMessage);
         Button btnShowSecondary = ViewCompat.requireViewById(view, R.id.btnShowSecondary);
-        // Do showSecondaryAction to navigate to SecondaryFragment when button clicked.
-        btnShowSecondary.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.showSecondaryAction));
+        btnShowSecondary.setOnClickListener(v -> {
+            Bundle args = new Bundle();
+            args.putString(getString(R.string.argMessage), txtMessage.getText().toString());
+            navController.navigate(R.id.showSecondaryAction, args);
+        });
     }
 
     @Override

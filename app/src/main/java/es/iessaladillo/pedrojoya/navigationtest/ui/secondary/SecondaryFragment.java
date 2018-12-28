@@ -1,25 +1,28 @@
 package es.iessaladillo.pedrojoya.navigationtest.ui.secondary;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import java.util.Objects;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
 import es.iessaladillo.pedrojoya.navigationtest.R;
 
 public class SecondaryFragment extends Fragment {
 
-    private SecondaryFragmentViewModel mViewModel;
+    private String message;
 
-    public static SecondaryFragment newInstance() {
-        return new SecondaryFragment();
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Objects.requireNonNull(getArguments());
+        message = getArguments().getString(getString(R.string.argMessage));
     }
 
     @Override
@@ -30,8 +33,12 @@ public class SecondaryFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(SecondaryFragmentViewModel.class);
-        // TODO: Use the ViewModel
+        setupViews(requireView());
+    }
+
+    private void setupViews(View view) {
+        TextView lblMessage = ViewCompat.requireViewById(view, R.id.lblMessage);
+        lblMessage.setText(message);
     }
 
 }

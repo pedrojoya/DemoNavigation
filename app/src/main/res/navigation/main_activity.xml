@@ -25,7 +25,7 @@
         android:label="@string/secondary_title"
         tools:layout="@layout/fragment_secondary">
         <argument
-            android:name="messageArgument"
+            android:name="@string/argMessage"
             android:defaultValue="Hello"
             app:argType="string"/>
     </fragment>
