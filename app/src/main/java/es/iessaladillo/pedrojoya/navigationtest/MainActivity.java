@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         AppBarConfiguration appBarConfiguration =
             new AppBarConfiguration.Builder(R.id.mainDestination, R.id.galleryDestination, R.id.slideshowDestination)
-            .setDrawerLayout(drawerLayout)
-            .build();
+                .setDrawerLayout(drawerLayout)
+                .build();
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
     }
 

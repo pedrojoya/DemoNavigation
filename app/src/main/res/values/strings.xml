@@ -18,4 +18,5 @@
     <string name="slideshow_title">Slideshow</string>
 
     <string name="settings_title">Settings</string>
+    <string name="gallery_btnIncrement">Increment</string>
 </resources>

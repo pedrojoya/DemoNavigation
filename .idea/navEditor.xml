@@ -8,25 +8,13 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="SettingsDestination">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-389" />
-                            <option name="y" value="164" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="galleryDestination">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-210" />
-                            <option name="y" value="14" />
+                            <option name="x" value="-168" />
+                            <option name="y" value="-206" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -63,6 +51,23 @@
                           </Point>
                         </option>
                       </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="settingsDestination">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="showGalleryAction">
+                    <value>
+                      <LayoutPositions />
                     </value>
                   </entry>
                   <entry key="slideshowDestination">
