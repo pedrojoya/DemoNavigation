@@ -1,6 +1,8 @@
 package es.iessaladillo.pedrojoya.navigationtest;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -25,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Get navController from activity.
         navController = Navigation.findNavController(this, R.id.navHostFragment);
-        drawerLayout  = findViewById(R.id.drawerLayout);
+        drawerLayout = findViewById(R.id.drawerLayout);
         // Title isn't preserved automatically on configuration change with diferent layouts
-        navController.addOnDestinationChangedListener((controller, destination, arguments) ->
-            setTitle(destination.getLabel()));
+        navController.addOnDestinationChangedListener(
+            (controller, destination, arguments) -> setTitle(destination.getLabel()));
         if (drawerLayout != null) {
             // Navigation drawer mode.
             setupToolbarWithDrawerLayout();
@@ -43,10 +45,9 @@ public class MainActivity extends AppCompatActivity {
     private void setupToolbarWithDrawerLayout() {
         Toolbar toolbar = ActivityCompat.requireViewById(this, R.id.toolbar);
         setSupportActionBar(toolbar);
-        AppBarConfiguration appBarConfiguration =
-            new AppBarConfiguration.Builder(R.id.mainDestination, R.id.galleryDestination, R.id.slideshowDestination)
-                .setDrawerLayout(drawerLayout)
-                .build();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+            R.id.mainDestination, R.id.galleryDestination,
+            R.id.slideshowDestination).setDrawerLayout(drawerLayout).build();
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
     }
 
@@ -58,16 +59,27 @@ public class MainActivity extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = ActivityCompat.requireViewById(this, R.id.toolbar);
         setSupportActionBar(toolbar);
-        AppBarConfiguration appBarConfiguration =
-            new AppBarConfiguration.Builder(R.id.mainDestination, R.id.galleryDestination, R.id.slideshowDestination)
-                .build();
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+            R.id.mainDestination, R.id.galleryDestination, R.id.slideshowDestination).build();
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
     }
 
     private void setupBottomNavigationView() {
-        BottomNavigationView bottomNavigationView = ActivityCompat.requireViewById(this, R.id
-            .bottomNavigationView);
+        BottomNavigationView bottomNavigationView = ActivityCompat.requireViewById(this,
+            R.id.bottomNavigationView);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return NavigationUI.onNavDestinationSelected(item, navController)
+            || super.onOptionsItemSelected(item);
     }
 
 }

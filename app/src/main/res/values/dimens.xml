@@ -5,4 +5,5 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="slideshow_lblLorem_padding">16dp</dimen>
     <dimen name="slideshow_lblLorem_textSize">20sp</dimen>
+    <dimen name="gallery_margin">8dp</dimen>
 </resources>
